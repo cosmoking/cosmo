@@ -1,0 +1,116 @@
+
+
+body {	
+	width:768px; 
+	height:100%; 
+	margin: 0 0 !important;
+	overflow-x:hidden;
+}
+
+#TopBG {	
+	position:fixed;
+	top:0px;
+	width:768px;
+	height:60px;
+    z-index:2;
+    margin-left: 0px;
+}
+
+#TopBorder {  	
+	position:absolute;
+	top:60px;
+	width:704px;
+	height:8px;  
+    z-index:2;
+    margin-left: 0px;
+    //background:url('/2/x_TopBorder.png') no-repeat;	
+}
+
+
+#BottomBorder {	
+	position:absolute;
+	bottom:15px;
+	width:704px;
+	height:8px;  	
+    z-index:2;	
+    margin-left: 0px;
+    //background:url('/2/x_BtmBorder.png') no-repeat;
+}
+
+#BottomBG {	
+	position:fixed;
+	bottom:0px;
+	width:768px;
+	height:15px;  
+    z-index:1;
+    margin-left: 0px;
+}
+
+/* section layout */
+#Top {
+    height: 60px;
+    left: 32px;
+    position: absolute;
+    top: 0px;
+    width: 704px;
+    margin-left: 0px;
+}
+
+
+#Center {
+	position:absolute;
+	width:768px; /* 704 - 50px border */
+	min-height:100%;
+	margin-left: 0px;
+
+}
+
+
+
+
+
+
+
+/* tablet specific */
+.ipad .viewContentDetailCenter {
+	margin-left:34px !important;
+	margin-right:34px !important;
+	left:0px;
+}
+
+
+.ipad .viewContentDetailCenter .cmdBar {
+	left:0px !important;
+	margin-left:0px !important;
+	z-index: 102;	
+}
+
+.ipad .viewContentDetailCenter .viewContentDetailArea {
+	width:668px !important;
+	-webkit-overflow-scrolling:touch;
+}
+
+.ipad .scrollable {
+	overflow-x:hidden !important;
+	//-webkit-overflow-scrolling:touch !important;
+}
+
+/*
+.ipad .previewOuterFrame {
+	height:55px !important;
+}
+
+.ipad .previewiFrameCoverHeader h2 {
+	text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow-x:hidden;
+}
+*/
+
+.ipad .scrollableControl .next.enabled {
+	visibility: visible;
+}
+
+.ipad .scrollableControl .prev.enabled {
+	visibility: visible;
+}

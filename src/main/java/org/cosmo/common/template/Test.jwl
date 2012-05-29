@@ -1,0 +1,84 @@
+
+
+^class(org.cosmo.common.template.Test)^
+	^fieldA^
+	^methodB()^
+	^org.cosmo.common.template.Test2{}^
+	^org.cosmo.common.template.Test$InnerClass{}^
+	^bindingLess.template{}^
+	^bindingLess.template2{somearg:fieldA}^
+	
+	^bind(fieldA)^
+		^case(true)^
+			sadf
+		^case(,)^
+			^methodB()^
+		^case^	
+	^bind^	
+	
+^class^
+
+^class(org.cosmo.common.template.Test2)^
+	^test2FieldC^
+	^org.cosmo.common.template.Test$InnerClass{}^
+	^case(0)^
+		^case(true)^
+			^case(exprBindingTrue,`success`)^
+			^case(exprBindingTrue)^
+				^case(exprBindingTrue,test2FieldC)^
+				NESTEDCASETRUE!
+			^case(,)^
+				ERROR!
+			^case^
+		^case(,)^
+			ERROR!
+		^case^
+	^case(,)^
+		ERROR!
+	^case^
+
+	^case(exprBindingTrue)^
+		testTrue
+	^case(,)^
+		ERROR!
+	^case^
+
+	^case(exprBindingTrue)^
+		testTrue2
+	^case^
+
+	^case(exprBindingFalse)^
+		ERROR!
+	^case(,)^
+		testFalse
+	^case^
+
+	^case(exprBindingFalse)^
+		ERROR!
+	^case^
+
+	^case(exprBindingThree)^
+		ERROR!
+	^case(,)^
+		ERROR!
+	^case(,)^
+		ERROR!
+	^case(,)^
+		TestThree
+	^case^
+
+	^case(exprBindingTrue,test2FieldC)^
+^class^
+
+^class(org.cosmo.common.template.Test$InnerClass)^
+	^fieldD^
+^class^
+
+^class(bindingLess.template!)^
+	bindingLess.template
+^class^
+
+
+^class(bindingLess.template2!)^
+	^somearg!^
+^class^

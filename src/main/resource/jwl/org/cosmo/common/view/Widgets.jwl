@@ -1,0 +1,49 @@
+^class(Link!)^
+	<div class="^case(!style,!style,`LinkDefault`)^" href="#" title="^!title^">
+	 	<H6>^!label^</H6>
+	</div>
+^class^
+
+
+^class(Portlet!)^
+
+	^case(!dropDown)^
+		<div id="^!id^" class="portlet ^case(!class,!class)^">
+		    <div class="portletHeader" _eventMeta="_click:portlet.showDropDown">
+		    	<H6 class="bold emboss3 color10">^!title^</H6>
+		    </div>
+			<div class="corner3 scrollbar" style="height:^!height^">
+			</div>
+	
+			<div class="hide portletContent gradientSand" style="height:^!height^" _eventMeta="_mouseenter:lightScrollBar.mouseIn;_mouseleave:lightScrollBar.mouseOut;_scroll:lightScrollBar.scroll" data-store='{"scrollbarContent":":first-child","autoHide":^case(!scrollbarAutoHide,!scrollbarAutoHide,`true`)^}'>
+				^!content^
+			</div>	
+		</div>
+	^case(,)^
+		<div id="^!id^" class="portlet ^case(!class,!class)^">
+			<div class="portletHeader ^case(!title,``,`hide`)^">
+			  	<H6 class="bold emboss3 color10">^!title^</H6>
+			</div>
+			<div class="corner3 scrollbar" style="height:^!height^">
+			</div>
+			<div class="portletContent" style="height:^!height^" _eventMeta="_mouseenter:lightScrollBar.mouseIn;_mouseleave:lightScrollBar.mouseOut;_scroll:lightScrollBar.scroll" data-store='{"scrollbarContent":":first-child","autoHide":^case(!scrollbarAutoHide,!scrollbarAutoHide,`true`)^}'>
+				^!content^
+			</div>	
+		</div>
+	^case^
+	
+^class^
+
+^class(ModalBG!)^
+	<div id="ModalBG">
+	</div>
+^class^
+
+
+^class(Spacer!)^
+	<div style="height:^!height^;width:100%;float:left;clear:both">
+	</div>
+^class^
+
+
+

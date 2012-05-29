@@ -1,0 +1,236 @@
+package record;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.KeywordAnalyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.DocIdSet;
+import org.apache.lucene.search.DocIdSetIterator;
+import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.QueryFilter;
+import org.apache.lucene.search.QueryWrapperFilter;
+import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.TermQuery;
+import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.store.FSDirectory;
+import org.apache.lucene.store.LockObtainFailedException;
+
+import app.Forum;
+
+public class Search
+{
+	FSDirectory _indexDir;
+	IndexReader _reader;
+	Analyzer _analyzer;	
+	Meta _meta;
+	
+
+	Search (Meta meta)
+	{
+		_meta = meta;
+		try {
+			_indexDir = FSDirectory.getDirectory(_meta.dir() + File.separator + "index");
+			_analyzer = new StandardAnalyzer();
+			try {
+				_reader = IndexReader.open(_indexDir);
+			}
+			catch (FileNotFoundException e) {
+					// init in case Index hasn't been created
+				_meta.index().hashCode();
+			}
+			catch (LockObtainFailedException e) {
+				File file = new File (_meta.dir() + File.separator + "index" + File.separator + "write.lock");
+				file.delete();				
+			}
+			_reader = IndexReader.open(_indexDir);
+		}
+		catch (IOException e) {
+			throw new RecordException(e);
+		}
+	}
+	
+	
+	private IndexSearcher searcher ()
+	  throws IOException
+	{
+		_meta.index().commit();
+		IndexReader testNew = _reader.reopen();
+		if (testNew != _reader) {
+		  _reader.close(); 
+		}
+		 _reader = testNew;		
+		return new IndexSearcher(_reader);
+	}
+	
+		// xxx: should first compare hashCode then match the values
+	/*
+	public long searchUniqueId (Defn defn, String value) 
+	  throws ParseException, IOException
+	{
+			// XXX clean this check for defn index shit
+		ensureDefnIsDeclaredIndex(defn);		
+		Term term = new Term(defn._field.getName(), value);
+		Document doc = search(term);
+	    if (doc != null) {	    	
+		    byte[] idBytes = doc.get("id").getBytes();
+		    return Converter.toLong(idBytes);
+	    }
+	    return -1;
+	}
+	*/
+	
+	public long searchUniqueId (String value)
+	  throws IOException
+	{
+		Term term = new Term(Meta.UniqueIdFactory.UniqueIdFieldName, value);
+		Document doc = search(term);
+	    if (doc != null) {	    	
+		    byte[] idBytes = doc.get("id").getBytes();
+		    return Converter.toLong(idBytes);
+	    }
+	    return -1;
+	}
+	
+	
+	
+	public List<Record> search (Query query) 
+	  throws ParseException, IOException
+	{
+		return search(query._defn, query._str.toString(), query._defn._declaringMeta.recordStore().count());
+	}
+	
+/*	
+	public boolean hasDocument (Defn defn, String uniqueValue)
+		throws ParseException, IOException
+	{
+		Query query = Query.on().keyword(defn, uniqueValue);
+		return search(query._defn, query._str.toString(), 1).size() > 0;
+	}
+*/	
+	
+	
+	public Document search (Term term)
+	  throws IOException
+	{
+		TermQuery query = new TermQuery(term);
+		IndexSearcher searcher = searcher();
+		TopDocs docs = searcher.search(query, 1);
+		return docs.scoreDocs.length > 0 ? searcher.doc(docs.scoreDocs[0].doc) : null;
+	}
+	
+		// uses Search directly with Query - results is Documents	
+	public List<Record> searchOri (Defn defn, String queryStr, int maxResultSize) 
+	  throws ParseException, IOException
+	{
+		ensureDefnIsDeclaredIndex(defn);
+		
+		org.apache.lucene.search.Query query =
+			new QueryParser(defn._field.getName(), _analyzer).parse(queryStr);
+		
+	
+			// XXX update this result count
+		IndexSearcher searcher = searcher();		
+		
+			// XXX remove - probably should avoid lookup file size
+		int count = defn._declaringMeta.recordStore().count();
+		if (count == 0) {
+			return new ArrayList();
+		}
+		
+	    TopDocs docs = searcher.search(query, maxResultSize);
+	    List<Record> list = new ArrayList();	    
+	    if (docs.scoreDocs.length > 0) {
+	    	for(int i=0; i<docs.scoreDocs.length; ++i) {
+	    		Document doc = searcher.doc(docs.scoreDocs[i].doc);
+	    		byte[] idBytes = doc.get("id").getBytes();
+	    		long id = Converter.toLong(idBytes);
+	    		Record record = DefnRecord.setupRecord(id, defn._declaringMeta._clazz);
+	    		record.tx().load();
+	    		list.add(record);
+	    	}
+	    }
+		return list;
+	}
+
+		// uses Search using Filter - results is Bit Documents 		
+	public List<Record> search (Defn defn, String queryStr, int maxResultSize) 
+	  throws ParseException, IOException
+	{
+		ensureDefnIsDeclaredIndex(defn);
+		
+		org.apache.lucene.search.Query query =
+			new QueryParser(defn._field.getName(), _analyzer).parse(queryStr);
+		
+		QueryWrapperFilter filter = new QueryWrapperFilter(query);
+		
+		IndexReader reader = searcher().getIndexReader();
+		DocIdSet results = filter.getDocIdSet(reader);
+		
+	    List<Record> list = new ArrayList();	    
+	    
+	    DocIdSetIterator resultsIterator = results.iterator();
+	    
+	    while (resultsIterator.next()) {
+	    	Document doc = reader.document(resultsIterator.doc());
+	    	byte[] idBytes = doc.get("id").getBytes();
+	    	long id = Converter.toLong(idBytes);
+	    	Record record = DefnRecord.setupRecord(id, defn._declaringMeta._clazz);
+	    	record.tx().load();
+	    	list.add(record);
+	    }
+	    return list;
+	}
+	
+
+	public DocIdSet searchResults (Defn defn, String queryStr)	
+	  throws Exception
+	{
+		ensureDefnIsDeclaredIndex(defn);
+		
+		org.apache.lucene.search.Query query =
+			new QueryParser(defn._field.getName(), _analyzer).parse(queryStr);
+		
+		QueryWrapperFilter filter = new QueryWrapperFilter(query);
+		
+		IndexReader reader = searcher().getIndexReader();
+		DocIdSet results = filter.getDocIdSet(reader);
+		return results;
+	}
+	
+	
+	
+	public static void ensureDefnIsDeclaredIndex (Defn defn)
+	{
+		if (!defn._isIndexField) {
+			throw new RecordException(defn.getDeclaringFieldName() + "is not declared as an index field");
+		}
+	}
+	
+/*	
+	public RecordList search (String queryStr)
+	{
+		QueryParser.
+		org.apache.lucene.search.Query query =
+			
+		
+		
+		
+	}
+*/	
+}
+
+

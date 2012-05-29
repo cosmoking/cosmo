@@ -1,0 +1,1123 @@
+
+.LinkDefault {
+	color:Darkblue !important;
+	cursor:pointer !important;	
+	font-size:11px;
+	font-Family: Verdana;
+	font-weight:bold;
+	
+}
+
+.supportHover .LinkDefault:hover {
+
+	text-shadow: 1px 1px 13px red;
+}
+
+
+
+
+/* content layout */
+
+.Logo {
+	margin-top:15px;
+	float:left;
+	height:30px;
+	width:196px;
+}
+
+
+#SearchBar {
+   	float: left;
+    height: 26px; 
+    position: relative;
+    width: 250px;
+    top:18px;
+    box-shadow:1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4) inset;
+    
+     
+    /*border: 1px solid #ECE9D8;*/ 
+}
+
+
+
+#SearchBar label, #SearchBar input{
+    box-shadow:none;
+   	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+
+#SearchBar #QueryAheadDropDown {
+	top:-20px;
+	position:relative;
+}
+
+
+/* IE */
+.msie #SearchBar.inputBox1 {
+	padding-top:0px !important;
+}
+
+
+
+
+#appuiPortalPortletDivId {
+	position:relative;
+	float:none;
+	margin-top:2px;
+	min-width:70px;
+}
+
+.NavBarSrch {
+	width:300px;
+}
+
+/*
+.NavBarSrch:focus {
+	width:300px;
+}
+*/
+
+
+.SearchText {
+	font:italic bold 12px Verdana, Arial, Helvetica;
+	padding-right:20px;
+	color: #999999;
+	outline:0px;	
+	border:0px;
+	width:200px;
+	background: none;
+}
+
+
+
+
+
+.NavBarL {
+	margin-left:25px;
+	float:left;
+	height:100%;
+	width:4px;
+	background:url('/2/x_NavBarL_4x30.png') no-repeat;	
+}
+
+.NavBarC {
+	float:left;
+	height:100%;
+	min-width:200px;
+	background:url('/2/x_NavBarC_2x30.png') repeat;		
+	display:block;
+}
+
+
+
+.NavBarR {
+	float:left;
+	height:100%;
+	width:4px;
+	background:url('/2/x_NavBarR_4x30.png') no-repeat;	
+	
+}
+
+.NavBarSrchL {
+	float:left;
+	height:100%;
+	width:10px;
+	background:url('/2/x_NavBarSrchL_10x30.png') no-repeat;	
+	
+}
+
+.NavBarSrchC {
+	display:block;
+	float:left;
+	height:100%;
+	width:auto;
+	
+}
+
+.NavBarSrchR {
+	float:left;
+	height:100%;
+	width:25px;
+	background:url('/2/x_NavBarSrchR_25x30.png') no-repeat;	
+	
+}
+
+
+
+
+
+.heroBanner {
+	width:698px;
+	margin-top: 62px;		
+}
+
+.heroBanner .row {
+	width:648px;
+	clear:none;
+}
+
+.heroBanner .header {
+	float:left;
+	margin-bottom:5px;
+	width:auto;
+}
+
+
+.heroBanner .divider {
+	background:url('/2/x_black_border.png') repeat-x 0px 15px;
+	height:32px;	
+}
+
+.heroBanner .bottom {
+	height:25px;
+}
+
+.heorBanner .scrollableControl {
+	width:698px;
+}
+
+
+
+#HomePanel .scrollableControl {
+	width:648px;
+	height:400px;
+}
+
+#HomePanel .scrollable {
+	overflow-x: hidden;
+}
+
+#HomePanel .scrollable  > * {
+	width:648px;
+	height:100%;
+	margin-top:100px;
+}
+
+#HomePanel h1 {
+	margin-bottom:5px;
+}
+
+#HomePanel input {
+	margin-bottom:15px;
+}
+
+
+
+
+#HomePanel .scrollableControl .prev{
+
+	width:120px;
+	height:20px;
+	margin:0;
+	display:block;		
+	visibility:hidden;
+}
+
+#HomePanel .scrollableControl .prev.enabled {
+	visibility:visible;
+}
+
+#HomePanel .scrollableControl .next {
+	width:120px;
+	height:20px;
+	margin:0;
+	display:block;		
+	visibility:visible;
+}
+
+#HomePanel .scrollableControl .next.disabled {
+	visibility:hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+#DigestPanel .scrollableControl.one {
+	height:264px;		
+	
+}
+
+#DigestPanel .scrollableControl.two {
+	height:190px;
+}
+
+#DigestPanel .scrollableControl.one .prev {
+	margin-top:45px;
+}
+
+#DigestPanel .scrollableControl.one .next {
+	margin-top:45px;
+}
+
+#DigestPanel .scrollableControl .prev {
+	border: none; 
+    filter:none;
+
+}
+
+#DigestPanel .scrollableControl .next {
+	border: none; 
+    filter:none;
+	
+}
+
+
+
+.supportHover #DigestPanel .scrollableControl .prev:hover span {
+	
+	text-shadow:0 0 20px white, 0 0 2px white;
+}
+
+
+.supportHover #DigestPanel .scrollableControl .next:hover span {
+	
+	text-shadow:0 0 20px white, 0 0 2px white;
+}
+
+
+
+.contentEntryLarge {
+	width:648px;
+	display:block;	
+}
+
+
+.contentEntryLarge ._entryTitle {
+	line-height:30px;
+	width:648px;
+	overflow-x:auto;
+	overflow-y: hidden;
+}
+
+
+.contentEntryLarge ._entrySiteTitle {
+	height:16px;
+	margin-top:6px;
+}
+.contentEntryLarge ._entryDisplay {
+	margin-top:10px;
+	float:left;
+	width:306px; 
+	height:196px;	
+	position:relative;
+}
+.contentEntryLarge ._entryContentText {
+	margin-top:10px;
+	float:right;
+	width:316px;
+	height:206px;	
+	line-height:26px;
+	white-space:normal !important;
+	
+}
+.contentEntryLarge ._entryContentText:first-letter {
+	font-size:17px;
+	font-weight:bold;
+}
+
+
+
+
+
+.contentEntry {
+  	height:180px;
+  	display:block;
+}
+
+._entryTitle:first-letter {
+	text-transform:capitalize !important;
+}
+
+.contentEntry > * {
+  	width:196px;	
+}
+
+.contentEntry ._entryDisplay {
+	height:124px;
+	position:relative;
+	/*box-shadow: 1px 1px 2px grey;*/
+}
+
+.contentEntry ._entryDisplay.hasImage {
+	height:114px;
+	width:186px;
+	border: 5px solid transparent;
+	//background:url('/2/x_brown_bg.png') repeat;	
+}
+
+.contentEntry ._entryDisplay ._entryImg img{
+	display:inline-block;
+	vertical-align:top;
+}
+
+/*  Use this when there is a backdgournd color on the entry
+.contentEntry ._entryContentText {
+	border:8px solid transparent;
+	border-top:5px solid transparent;
+	border-bottom:5px solid transparent;
+	line-height:19px;
+	white-space:normal !important;
+	height:114px; // 124 = 108 + 6 + 10 	
+}
+
+.contentEntry ._entryContentText.two {
+	border:0px;
+	border-top:5px solid transparent;
+	border-bottom:5px solid transparent;
+}
+
+*/
+
+
+.contentEntry ._entryContentText {
+	margin-top:5px;/*border-bottom:5px solid transparent;*/
+	line-height:19px;
+	white-space:normal !important;
+	margin-left:5px;
+	margin-right:5px;
+	height:114px; // 124 = 108 + 6 + 10 	
+}
+
+
+.contentEntry ._entryContentText.two {
+	/* margin-left:0px; */
+	/* margin-right:0px; */
+}
+
+
+
+.contentEntry ._entryContentText:first-letter {
+	font-size:13px;
+	font-weight:bold;
+}
+
+.contentEntry ._entryTitle {
+	height:32px;
+	line-height:16px;
+	white-space:normal !important;	
+}
+
+.contentEntry ._entryTitle:first-letter {
+	font-size:15px;
+	font-weight: bold;
+
+}
+
+
+.contentEntry ._entrySiteTitle {
+	height:16px;
+	margin:4px 0px;		
+}
+
+
+
+/* style for embed "thumbnail" 
+.contentEntryEmbedPreview {
+	width:744px !important;
+	height:456px !important;
+    -webkit-transform: scale(0.50);
+    -webkit-transform-origin: 0 0;
+    -ms-zoom: 0.50;    
+    margin:5px;
+    z-index:0 !important;
+}
+
+
+.firefox .contentEntryEmbedPreview {
+	width:372px !important;
+	height:228px !important;
+    -moz-transform: scale(0.50, 0.50);
+    -moz-transform-origin: 0 0; 
+}
+*/
+
+
+._modeCategory ._entrySiteTitle ._entryTime {
+}
+._modeCategory ._entrySiteTitle ._siteTitle {
+	display: none;
+}
+
+._modeSource ._entrySiteTitle ._entryTime {
+}
+._modeSource ._entrySiteTitle ._siteTitle {
+	display: none;
+}
+
+._modeAll ._entrySiteTitle ._entryTime {
+	display: none;
+}
+._modeAll ._entrySiteTitle ._siteTitle {
+
+}
+
+
+.contentEntryRowSection {
+	/*background:url('/2/x_brown_border.png') repeat-x 0px 15px;*/
+	width:100%;
+}
+
+ 
+.supportHover .contentEntryRowSection:hover ._sectionName {
+
+}
+ 
+ 
+.contentEntryRowSection ._sectionName:after {
+	 content: '\00A0\00BB'; 
+}
+
+
+
+
+
+/* creates zoom out effect when hover on entry
+.contentEntry:hover{
+	-moz-transform: scale(1.05, 1.05);
+    -webkit-transform: scale(1.05,1.05);
+    -ms-zoom: 1.05;	
+}
+*/
+
+
+.contentEntryRowSection .header {
+	margin-left:55px;
+	margin-right:55px;
+	margin-top:15px;
+	margin-bottom:10px;
+}
+
+.contentEntryRowSection._modeSource .header {
+	margin-top:15px;
+	margin-bottom:10px;
+}
+
+.contentEntryRowSection ._sectionName {
+	display:inline-block;
+	text-align: left;
+	text-transform:capitalize;
+}
+
+
+
+
+.contentEntryRowSection._modeSource ._sectionName{
+	display:none;
+}
+
+
+.contentEntryRowSection .more {
+	width:100%;
+	clear:both;	
+	height:25px;	
+}
+
+.contentEntryRowSection .scrollableControl {
+
+	width:698px;
+	height:190px;
+}
+
+
+.supportHover .contentEntryRowSection:hover .banner2 {
+	background: #cc6633;
+	filter:none;
+}
+
+/*
+.contentEntryRowSection:hover ._entryDisplay {
+	opacity:1;
+	filter: alpha(opacity=100);		
+}
+*/
+
+
+.supportHover .contentEntryRowSection .scrollableControl:hover .prev {
+	visibility:visible;
+}
+
+
+.supportHover .contentEntryRowSection .scrollableControl:hover .prev.disabled {
+	visibility:hidden;
+}
+
+
+.supportHover .contentEntryRowSection .scrollableControl .prev:hover {
+	background-color:rgb(217,215,196) !important;
+}
+
+
+
+.supportHover .contentEntryRowSection .scrollableControl:hover .next {
+	visibility:visible;
+}
+
+
+.supportHover .contentEntryRowSection .scrollableControl:hover .next.disabled {
+	visibility:hidden;
+}
+
+
+.supportHover .contentEntryRowSection .scrollableControl .next:hover {
+	background-color:rgb(217,215,196) !important;
+}
+
+
+
+
+.contentEntryRowSection .row {
+	width:648px;
+	clear:none;
+}
+
+
+
+
+/*
+.contentEntryRow .contentEntry > * {
+	margin-top:	-5px;
+}
+
+.contentEntryRow .contentEntry ._entryDisplay {
+	height:124px;
+	margin-left:-5px;
+	border: 5px solid transparent;
+}
+
+
+.moreContentEntryRowSection {
+	top:25px;
+	position:fixed;
+	left:50%;
+	width:698px; 	
+	margin-left:-353px;
+	z-index:103;	
+}
+*/
+
+
+.viewContentDetailCenter {
+	position:fixed;
+	width:710px; /* 704 - 50px border */
+
+	overflow:hidden;
+	display:none;
+	top:0px;
+	bottom:0px;
+	left:50%;
+	margin-left:-356px;
+	z-index:101;		
+}
+
+.viewContentDetailBG {
+	position:absolute;
+	width:698px; /* 704 - 50px border */
+	box-shadow: 0 0 5px #D9D7C4;
+	-webkit-box-shadow: 0 0 5px #D9D7C4;
+	-moz-box-shadow: 0 0 5px #D9D7C4;
+	border: 1px solid white;
+	overflow:hidden;
+	top:25px;
+	bottom:25px;
+}
+
+/*
+.viewContentDetailCenter.twenty {
+	position:fixed;
+	top:100px !important;
+	bottom:100px !important;
+	-webkit-transform:scale(1.2);
+	-moz-transform:scale(1.2);
+}
+*/
+
+/* remove outline for focus pane - allow keyboard scrolling */
+.viewContentDetailCenter *[tabindex='0']:focus {
+	outline:0px;
+}
+
+.viewContentDetailCenter .cmdBar {
+    height: 25px; 
+    width: 698px !important; /* website width ie,  width * scale = min-width, ie 1040 * 0.6 = 624 */
+    position: fixed;
+    left:50%;
+    margin-left:-359px;
+    color:white;
+    top:0px;
+}
+
+.viewContentDetailCenter .cmdBar.alt {
+    width: 1040px !important; /* website width ie,  width * scale = min-width, ie 1040 * 0.6 = 624 */
+    margin-left:-520px;
+}
+
+
+.viewContentDetailCenter .scrollbar {
+	left:682px;
+	width:8px;
+	margin-top:0px;
+	top:25px;
+	bottom:15px;
+}
+
+
+.viewContentDetailCenter .footer {
+	margin-top: 10px;
+}
+
+
+.viewContentDetailCenter .viewContentDetailArea {
+	position:absolute;
+	width:718px;
+	height:auto;
+	float:left;	
+	bottom:15px;
+	top:25px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+
+.viewContentDetailCenter ._entryTitle {
+	line-height:30px;
+	width:648px;
+	height:auto !important;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+
+/*
+.viewContentDetailCenter ._entryDisplay {
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:10px;
+	display:block;	
+	max-width:638px;
+	max-height:415px;
+	float:none;
+	width:auto;
+	height:auto;
+	border:5px solid transparent;
+	
+}
+*/
+
+
+/*
+ *  Deal with youtube video - the scorll doesn't work
+ *  Deal with weird script problem
+ *  Try web2.0 category
+ */
+
+
+
+
+/*
+
+.viewContentDetailCenter ._entryContent:first-letter {
+	font-size:17px;
+	font-weight:bold;
+}
+
+.viewContentDetailCenter ._entryContent:first-letter {
+	font-weight:bold;
+	letter-spacing: 2px;
+	text-transform:capitalize;
+}
+*/
+
+
+
+.viewContentDetailCenter ._entryContent {
+	font-size:15px !important;
+	height:100%;
+}
+
+.viewContentDetailCenter .divider {
+	background:url('/2/x_brown_border.png') repeat-x 0px 0px !important;
+	height:2px !important;	
+}
+
+
+.viewContentDetailCenter ._entryContent ul {
+	margin: 0.5em 0em 0.5em 1.5em;
+}
+
+
+.viewContentDetailCenter ._entryContent ol {
+	margin: 0.5em 0em 0.5em 3em; /* number needs more left margin */
+}
+
+.viewContentDetailCenter ul.listWithImage {
+	margin: 0 !important;
+}
+
+
+
+.viewContentDetailCenter ._entryContent ul > li {
+	list-style: disc outside;
+}
+
+.viewContentDetailCenter ._entryContent ol > li {
+	list-style: decimal outside;	
+}
+
+	/* remove bullets and clear both */
+.viewContentDetailCenter li.listWithImage  {
+	list-style:none !important;
+	clear:both;
+}
+
+	/* list with image only , no clear */
+.viewContentDetailCenter li.listWithImage.imageOnly {
+	list-style:none !important;
+	clear:none;
+}
+
+
+/* for img directly under list items we want to float right - bcos usualy there are text and we want make a distinction*/
+.viewContentDetailCenter li.listWithImage img {
+	float:right;
+}
+
+
+
+.viewContentDetailCenter ._entryContent ul.listOfLinks {
+	margin: 0px 5px;
+	clear:both;
+	background-color:#ffffdd;	
+	/*border: 1px solid rgb(204, 204, 204);*/
+}
+
+.viewContentDetailCenter ._entryContent ul.listOfLinks > li {
+	margin: 0 0 0 30px;
+	list-style: disc outside;
+}
+
+.viewContentDetailCenter ._entryContent ul.listOfLinks > li:first-child {
+	padding-top: 8px !important;
+}
+
+.viewContentDetailCenter ._entryContent ul.listOfLinks > li:last-child {
+	padding-bottom: 8px !important;
+}
+
+
+
+.viewContentDetailCenter ._entryContent li img._entryDisplayStetchToFitFrame {
+	/* only do it for ordered list , we actually only want to do it with ol that has img with huge image */
+	width:580px !important;
+	background-color:red !important;	
+}
+
+
+/* line-height uses pixel so that 'Capital Cap' works, for some reason if use em it won't work */
+.viewContentDetailCenter ._entryContentWrapper ._entryContent,
+.viewContentDetailCenter ._entryContentWrapper ._entryContent * {
+	line-height:26px !important;
+	letter-spacing:1px !important;
+	/*text-align:left !important;*/
+}
+
+.viewContentDetailCenter ._entryContent hr {
+	width:100%;
+	clear: both;
+	border-color: #CCCCCC;
+    border-style: none none dotted;
+    border-width: medium medium 1px;
+}
+
+
+
+.viewContentDetailCenter ._entryContent p {
+	margin-bottom:1em !important;	
+}
+
+
+/* root level headings - put on it's own line */
+.viewContentDetailCenter ._entryContent h1,
+.viewContentDetailCenter ._entryContent h2,
+.viewContentDetailCenter ._entryContent h3,
+.viewContentDetailCenter ._entryContent h4,
+.viewContentDetailCenter ._entryContent h5,
+.viewContentDetailCenter ._entryContent h6 {
+	color: black;
+  	font-family:Georgia !important;
+}
+
+
+.viewContentDetailCenter ._entryContent h1:first-letter,
+.viewContentDetailCenter ._entryContent h2:first-letter,
+.viewContentDetailCenter ._entryContent h3:first-letter {
+	font-size:22px !important;
+	font-weight: 600 !important;
+  	text-transform:capitalize !important;
+}
+
+.viewContentDetailCenter ._entryContent h4:first-letter,
+.viewContentDetailCenter ._entryContent h5:first-letter, 
+.viewContentDetailCenter ._entryContent h6:first-letter {
+  	text-transform:capitalize !important;
+}
+
+.viewContentDetailCenter ._entryContent h1,
+.viewContentDetailCenter ._entryContent h2,
+.viewContentDetailCenter ._entryContent h3 {
+  	text-shadow: -1px -2px 1px white, 0 0 1px silver; /*, 0 0 20px yellow;*/
+	font-size:20px !important;
+	padding-top:10px;
+	padding-bottom:10px;
+	clear:both;
+}
+
+
+.viewContentDetailCenter ._entryContent h4,
+.viewContentDetailCenter ._entryContent h5,
+.viewContentDetailCenter ._entryContent h6 {
+  	text-shadow: -1px -2px 1px white, 0 0 1px silver;
+	font-size:18px !important;
+	padding-bottom:5px;
+}
+
+
+
+
+
+
+.viewContentDetailCenter ._entryContent b,
+.viewContentDetailCenter ._entryContent bold,
+.viewContentDetailCenter ._entryContent em,
+.viewContentDetailCenter ._entryContent strong {
+	
+	font-weight: 600 !important;	
+	color: #656565 !important;
+	text-shadow: 0px -2px 1px white;
+	font-style: normal !important;
+	/*
+	font-weight: 600 !important;
+	text-shadow: 1px 1px 1px white !important;
+	font-style: normal !important;
+	*/
+}
+
+.viewContentDetailCenter ._entryContent dd {
+	text-align:left !important;
+	font-style: italic !important;
+}
+
+
+.viewContentDetailCenter ._entryContent p {
+	text-align:left !important;
+}
+
+.viewContentDetailCenter ._entryContent br {
+	clear:both; !important;  
+}
+
+
+.viewContentDetailCenter ._entryContent table {
+	float:left !important;
+}
+
+.viewContentDetailCenter ._entryContent table,
+.viewContentDetailCenter ._entryContent tr {
+	border-collapse: collapse;
+	/*border:2px dotted white;*/
+}
+
+
+.viewContentDetailCenter ._entryContent td {
+	vertical-align: top;
+}
+
+
+.viewContentDetailCenter ._entryContent center {
+	clear:both !important;
+}
+
+
+.viewContentDetailCenter ._entryContent div, a {
+	padding:0px !important;
+	width:auto !important;
+	margin-right:auto !important;
+	margin-left:auto !important;
+	margin-bottom:0px !important;
+	margin-top:0px !important;
+	vertical-align: baseline !important;
+}
+
+.viewContentDetailCenter ._entryContent a:link,
+.viewContentDetailCenter ._entryContent a b,
+.viewContentDetailCenter ._entryContent a bold,
+.viewContentDetailCenter ._entryContent a strong,
+.viewContentDetailCenter ._entryContent a em,
+.viewContentDetailCenter ._entryContent a i,
+.viewContentDetailCenter ._entryContent a span {
+	color:#153E7E !important; /* light blue */
+}
+
+
+.supportHover .viewContentDetailCenter ._entryContent a:visited:hover, 
+.supportHover .viewContentDetailCenter ._entryContent a:link:hover,
+.supportHover .viewContentDetailCenter ._entryContent a:hover > * {
+	 text-shadow: 0 0 15px red;
+}
+
+
+.viewContentDetailCenter ._entryContent a.linkWithImage {
+	/*float:left !important;*/
+	/*clear:both !important; *//* this prevents the tearing effect, BUT makes small images align vertically, should realy apply to big images */
+}
+
+
+.supportHover .viewContentDetailCenter ._entryContent a:hover img {
+	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+	-moz-box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+	box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+	/*background:none !important;*/
+	/*background-color:white !important;*/
+}
+
+.viewContentDetailCenter ._entryContent img {
+	display:inline-block;
+	/*float:left !important;*/
+}
+
+
+/* for FIRST image regardless where, float left, this is because commonly there are text after that... the rest img use regular rule */
+.viewContentDetailCenter ._entryContent img.first {
+	float:left !important;
+}
+
+
+.viewContentDetailCenter ._entryContent pre {
+	font-family: 'Courier New',Courier,monospace;
+	font-size: 12px !important;
+	line-height: 12px !important;
+	text-shadow: none !important;
+	min-height: 100px !important;
+	color:black !important;
+	padding: 0;
+	margin: 0;
+	background: #f0f0f0 ;
+	overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+}
+
+.viewContentDetailCenter ._entryDisplayFrame {
+	margin:4px 26px 8px 4px !important; /* 4 10 8 0 - to allow 3 in a row */  /* 22px right so that list bullet won't collide */  
+	max-width:626px;
+	border:5px solid transparent;
+	//background:url('/2/x_brown_bg.png') repeat;
+}
+
+.viewContentDetailCenter ._entryDisplayFrame.first {  /* first image has min-height 104px */
+	min-height: 104px;
+}
+
+
+.viewContentDetailCenter ._entryDisplaySmallFrame {
+	margin:2px 6px 4px 2px !important;
+	border:2px solid transparent !important;	
+}
+
+.viewContentDetailCenter ._entryDisplayAdjustToFitFrame {
+	width:206px !important; /* 196px - to allow 3 in row */
+	height:auto !important;
+	float:left !important;
+}
+
+.viewContentDetailCenter ._entryDisplayStetchToFitFrame {
+	width:626px !important;  /* width:604px !important; */
+	height:auto !important;
+	margin-left:6px !important; 
+	margin-right:6px !important; 	
+	clear:both !important;
+	float:left !important;
+}
+
+.viewContentDetailCenter ._entryEmbedFrame {
+	width:626px !important;
+	margin-left:6px !important; 
+	margin-right:6px !important; 	
+	clear:both !important;
+	float:left !important;
+	height:378px !important;
+}
+
+/* for somereason firefox takes border in account, so we need to increase by 10px */
+.firefox .viewContentDetailCenter ._entryEmbedFrame {
+	width:636px !important; 
+	max-width: 636px !important;
+}
+
+
+
+/* for imediate child ONLY */
+.viewContentDetailCenter ._entryContentWrapper > div {
+	height:auto;
+	width:648px;
+	float:left;
+	clear:both;
+}
+
+
+#ViewContentDetailRight {
+	position:fixed;
+	width:200px; /* 704 - 50px border */
+	margin-left:184px; /* 278 + 25px gap + 25px border */
+	overflow:hidden;
+	z-index:100;
+	top:200px;
+	bottom:200px;
+	background-color:blue;
+}
+
+.visitSiteFrame {
+	margin-left:auto;
+	margin-right: auto;
+}
+
+.visitSiteFrame * {
+	text-align: center;
+}
+
+
+
+
+.moreSection {
+	width:590px;
+	height:48px;
+}
+
+.moreSection *,
+{
+	text-align: center;
+}
+
+
+.toTopSection {
+	width:48px;
+	height:48px;
+}
+
+.toTopSection * {
+	text-align: center;
+}
+
+.msie .toTopSection h2 {
+	margin:0px 0px 0px 9px !important;
+}
+
+
+
+

@@ -1,0 +1,7 @@
+Name: cosmo
+Specification-Title: cosmo Spec Classes
+Specification-Version: 000080
+Specification-Vendor: Private
+Implementation-Title: cosmo Impl Classes 
+Implementation-Version: 000080
+Implementation-Vendor: Private

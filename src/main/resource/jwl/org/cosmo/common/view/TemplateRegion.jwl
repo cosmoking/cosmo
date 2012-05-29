@@ -1,0 +1,23 @@
+^class(org.cosmo.common.view.TemplateRegion)^
+	^initialize()^
+^class^
+
+^class(org.cosmo.common.view.TemplateRegion$Script,trim:true)^
+	<div id="^renderSegmentsDivId^"></div>		
+	 <script type="text/JavaScript">
+		var htmlSegments = ^renderHtmlSegments()^;
+		var htmlBindings = ^renderHtmlBindings()^;
+		var bindingNames = ^renderBindingNames()^;
+		var bindingAnnonations = ^renderBindingAnnonations()^;
+		page.bindingNameTable['^renderSegmentsDivId^'] = bindingNames;
+		page.bindingAnnonationsTable['^renderSegmentsDivId^'] = bindingAnnonations;
+		page.segmentsTable['^renderSegmentsDivId^'] = htmlSegments;
+		if (^onLoad^) {
+			eval(^onLoad^);
+		}
+		else {
+			page.applyBindingsToId(htmlBindings, "#^renderSegmentsDivId^", '^renderSegmentsDivId^');
+		}
+	</script>
+^class^
+

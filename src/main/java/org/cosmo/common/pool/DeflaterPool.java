@@ -1,0 +1,54 @@
+/*******************************************************************************
+ * Copyright 2012 Jack Wang
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ ******************************************************************************/
+package org.cosmo.common.pool;
+
+import java.util.zip.Deflater;
+
+public class DeflaterPool extends ObjectPool<Deflater>
+{
+
+	public static final DeflaterPool Instance = new DeflaterPool(Deflater.class, 4);
+
+	private DeflaterPool (Class<Deflater> clazz, int size)
+	{
+		super(clazz, size);
+	}
+
+	@Override
+	public Deflater newInstance ()
+	{
+		return new Deflater();
+	}
+
+	@Override
+	public Deflater recycleInstance (Deflater usedInstance)
+	{
+		usedInstance.reset();
+		return usedInstance;
+	}
+
+	@Override
+	public boolean isReadyForRecycle (Deflater usedInstance)
+	{
+		return usedInstance.finished();
+	}
+
+	@Override
+	public Deflater getInstanceButFullPool(ObjectPool<Deflater> pool)
+	{
+		return new Deflater();
+	}
+}

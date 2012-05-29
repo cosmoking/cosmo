@@ -1,0 +1,59 @@
+.bg1 {
+	background:url('/2/x_lightbrown_bg.png') repeat !important;	
+}
+
+.bg2,
+.contentEntry ._entryDisplay.hasImage.cssImg,
+._entryDisplayFrame.cssImg {
+	background:url('/2/x_brown_bg.png') repeat !important; 
+}
+
+.bg3 {
+	background:url('/2/x_black_bg.png') repeat !important;
+}
+
+.imgLoader {
+	background:url('/2/ajax-loader.gif') no-repeat center center;
+}
+
+.ajaxLoader,
+.executionRunning.cssImg  {
+	background-image: url('/2/ajax-loader.png');
+}
+
+.divider1 {
+	background:url('/2/x_brown_border.png') repeat-x 0px 0px !important;
+	height:2px !important;	
+}
+
+.divider2 {
+	background:url('/2/x_black_border.png') repeat-x 0px 0px !important;
+	height:2px !important;	
+}
+
+
+#TopBorder.cssImg {	
+	background:url('/2/x_TopBorder.png') no-repeat;
+}
+
+#BottomBorder.cssImg {	
+	background:url('/2/x_BtmBorder.png') no-repeat;
+}
+
+#QueryAheadDropGlass.cssImg {
+	background:url('/2/searchIcon.png') no-repeat;	
+}
+
+#QueryAheadInputClose.cssImg {
+	background:url('/2/searchCloseIcon.png') no-repeat scroll -3px -3px transparent;
+}
+
+._favicon.cssImg {
+	background:url('/2/rss-icon.png') no-repeat;
+}
+
+
+
+
+
+
